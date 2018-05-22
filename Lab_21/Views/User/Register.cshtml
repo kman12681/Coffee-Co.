@@ -2,13 +2,32 @@
 @{
     ViewBag.Title = "Register";
 }
+<style>
+    th {
+        background-color: black;
+        color: white;
+    }
+</style>
 
 <h2>Welcome to the Bean Team, @ViewBag.FirstName!</h2>
 <h4>Here's the profile information you added:</h4>
 <h3>@ViewBag.FirstName @ViewBag.LastName</h3>
-    Email: @ViewBag.Email<br />
-        Number: @ViewBag.Number<br />
-            Password: @ViewBag.Password<br />
+<table class="table table-striped">
+    <tr>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Password</th>
+        <th>Birthday</th>
+        <th>Desired Strength</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.Email</td>
+        <td>@ViewBag.Number</td>
+        <td>@ViewBag.Password</td>
+        <td>@ViewBag.Birthday</td>
+        <td>@ViewBag.Strength</td>
+    </tr>   
+</table>
 
 
 

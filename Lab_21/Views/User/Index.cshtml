@@ -6,39 +6,51 @@
 <h2>User Registration</h2>
 <h3>Fill out this form to start receiving monthly beans</h3>
 <hr />
-<form class="form-horizontal" action="User/Register" method="get">
-    <div class="form-group">
-        <label for="First Name" class="col-sm-6 control-label">First Name:</label>
-        <div class="col-sm-6"></div>
-        <input type="text" name="FirstName" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label for="Last Name" class="col-sm-6 control-label">Last Name:</label>
-        <div class="col-sm-6"></div>
-        <input type="text" name="LastName" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label for="Email" class="col-sm-6 control-label">Email:</label>
-        <div class="col-sm-6"></div>
-        <input type="text" name="Email" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label for="Number" class="col-sm-6 control-label">Number:</label>
-        <div class="col-sm-6"></div>
-        <input type="number" name="Number" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label for="Password" class="col-sm-6 control-label">Password:</label>
-        <div class="col-sm-6"></div>
-        <input type="text" name="Password" class="form-control" />
-    </div>
-    <div class="form-group">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4" style="text-align:center">
-            <input type="submit" class="btn btn-primary" name="Register" />
-            <input type="reset" class="btn btn-warning" name="Reset Form" />
+
+    <form class="form-horizontal" action="User/Register" method="get">
+        <div class="form-group">
+            <label for="First Name" class="col-sm-6 control-label"></label>
+            <div class="col-sm-6"></div>
+            <input type="text" name="FirstName" class="form-control" placeholder="First Name" />
         </div>
-        <div class="col-sm-4"></div>
-    </div>
-</form>
+        <div class="form-group">
+            <label for="Last Name" class="col-sm-6 control-label"></label>
+            <div class="col-sm-6"></div>
+            <input type="text" name="LastName" class="form-control" placeholder="Last Name" />
+        </div>
+        <div class="form-group">
+            <label for="Email" class="col-sm-6 control-label"></label>
+            <div class="col-sm-6"></div>
+            <input type="text" name="Email" class="form-control" placeholder="Email" />
+        </div>
+        <div class="form-group">
+            <label for="Number" class="col-sm-6 control-label"></label>
+            <div class="col-sm-6"></div>
+            <input type="number" name="Number" class="form-control" placeholder="Phone Number" />
+        </div>
+        <div class="form-group">
+            <label for="Password" class="col-sm-6 control-label"></label>
+            <div class="col-sm-6"></div>
+            <input type="text" name="Password" class="form-control" placeholder="Password" />
+        </div>
+        <div class="form-group">
+            <label for="Birthday" class="col-sm-6 control-label"></label>
+            <div class="col-sm-6"></div>
+            <input type="text" name="Birthday" class="form-control" placeholder="Birthday" />
+        </div>
+        <div class="form-group">
+            <label for="Strength" class="col-sm-6 control-label"></label>
+            <div class="col-sm-6"></div>
+            <input type="text" name="Strength" class="form-control" placeholder="Desired Strength" />
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align:center">
+                <input type="submit" class="btn btn-primary" name="Register" />
+                <input type="reset" class="btn btn-warning" name="Reset Form" />
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </form>
+
 
