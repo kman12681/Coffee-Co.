@@ -7,50 +7,94 @@
 <h3>Fill out this form to start receiving monthly beans</h3>
 <hr />
 
-    <form class="form-horizontal" action="User/Register" method="get">
-        <div class="form-group">
-            <label for="First Name" class="col-sm-6 control-label"></label>
-            <div class="col-sm-6"></div>
-            <input type="text" name="FirstName" class="form-control" placeholder="First Name" />
+<form class="form-horizontal" action="User/Register" method="get">
+
+    <div class="form-group">
+        <label for="First Name" class="col-sm-6 control-label"></label>
+        <div class="col-sm-6"></div>
+        <input type="text" name="FirstName" id="firstname" class="form-control" placeholder="First Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="Last Name" class="col-sm-6 control-label"></label>
+        <div class="col-sm-6"></div>
+        <input type="text" name="LastName" class="form-control" placeholder="Last Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="Email" class="col-sm-6 control-label"></label>
+        <div class="col-sm-6"></div>
+        <input type="text" name="Email" class="form-control" placeholder="Email" oninput="return CheckEmail()" />
+    </div>
+
+    <div class="form-group">
+        <label for="Number" class="col-sm-6 control-label"></label>
+        <div class="col-sm-6"></div>
+        <input type="number" name="Number" class="form-control" placeholder="Phone Number" />
+    </div>
+
+    <div class="form-group">
+        <label for="Password" class="col-sm-6 control-label"></label>
+        <div class="col-sm-6"></div>
+        <input type="text" name="Password" class="form-control" placeholder="Password" />
+    </div>
+
+    <div class="form-group">
+        <label for="CupsDay" class="col-sm-6 control-label"></label>
+        <div class="col-sm-6"></div>
+        <input type="text" name="CupsDay" id="cups" class="form-control" placeholder="Avg cups per day" />
+        <span id="CupsWarning"></span>
+
+    </div>
+    <!--<div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Desired Strength<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Light</a></li>
+            <li><a href="#">Medium</a></li>
+            <li><a href="#">Bold</a></li>
+            </ul>
+        </div> -->
+    <div class="form-group">
+        <label for="Strength" class="col-sm-6 control-label"></label>
+        <div class="col-sm-6"></div>
+        <input type="text" name="Strength" id="strength" class="form-control" placeholder="Desired Strength" oninput="return CheckStrength();" />
+        <span id="StrengthWarning"></span>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="text-align:center">
+
+            <input type="submit" class="btn btn-primary" value="Register" onclick="return CheckCups();" />
+            <input type="reset" class="btn btn-warning" value="Reset Form" />
         </div>
-        <div class="form-group">
-            <label for="Last Name" class="col-sm-6 control-label"></label>
-            <div class="col-sm-6"></div>
-            <input type="text" name="LastName" class="form-control" placeholder="Last Name" />
-        </div>
-        <div class="form-group">
-            <label for="Email" class="col-sm-6 control-label"></label>
-            <div class="col-sm-6"></div>
-            <input type="text" name="Email" class="form-control" placeholder="Email" />
-        </div>
-        <div class="form-group">
-            <label for="Number" class="col-sm-6 control-label"></label>
-            <div class="col-sm-6"></div>
-            <input type="number" name="Number" class="form-control" placeholder="Phone Number" />
-        </div>
-        <div class="form-group">
-            <label for="Password" class="col-sm-6 control-label"></label>
-            <div class="col-sm-6"></div>
-            <input type="text" name="Password" class="form-control" placeholder="Password" />
-        </div>
-        <div class="form-group">
-            <label for="Birthday" class="col-sm-6 control-label"></label>
-            <div class="col-sm-6"></div>
-            <input type="text" name="Birthday" class="form-control" placeholder="Birthday" />
-        </div>
-        <div class="form-group">
-            <label for="Strength" class="col-sm-6 control-label"></label>
-            <div class="col-sm-6"></div>
-            <input type="text" name="Strength" class="form-control" placeholder="Desired Strength" />
-        </div>
-        <div class="form-group">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4" style="text-align:center">
-                <input type="submit" class="btn btn-primary" name="Register" />
-                <input type="reset" class="btn btn-warning" name="Reset Form" />
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
-    </form>
+        <div class="col-sm-4"></div>
+    </div>
+
+</form>
+
+<script>
+
+    function CheckCups() {
+        var cups = document.getElementById("cups").value;
+        if (cups > 5 || cups < 1) {
+           document.getElementById("CupsWarning").innerHTML =
+           "<b>" + "Choose 1-5 </b>";
+            return false;
+        }
+        return true;
+    }
+
+    function CheckStrength() {
+        var strength = document.getElementById("strength").value;
+        if (strength != "light" || strength != "medium" || strength != "bold") {
+            document.getElementById("StrengthWarning").innerHTML =
+                "<b>" + "choose light, medium, or bold</b>";
+            return false;
+        }
+        return true;
+    }            
+       
+</script>
 
 

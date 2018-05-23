@@ -15,20 +15,20 @@ namespace Lab_21.Controllers
         }
 
         public ActionResult Register(
-            string firstName = "John",
-            string lastName = "Smith",
-            string email = "John@Smith.com",
-            int number = 0000000000,
-            string password = "password",
-            string birthday = "",
-            string strength = "medium")
+            string firstName = "",
+            string lastName = "",
+            string email = "",
+            int number = 0,
+            string password = "",
+            int cupsDay = 0,
+            string strength = "")
         {
             ViewBag.FirstName = firstName;
             ViewBag.LastName = lastName;
             ViewBag.Email = email;
             ViewBag.Number = number;
             ViewBag.Password = password;
-            ViewBag.Birthday = birthday;
+            ViewBag.CupsDay = cupsDay;
             ViewBag.Strength = strength;
             return View();
         }
