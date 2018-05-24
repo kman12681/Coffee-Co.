@@ -7,7 +7,7 @@
 <h3>Fill out this form to start receiving monthly beans</h3>
 <hr />
 
-<form class="form-horizontal" action="User/Register" method="get">
+<form class="form-horizontal" action="User/Register" method="get" onsubmit="return ValidateEmail() && CheckCups() && CheckStrength()">
 
     <div class="form-group">
         <label for="First Name" class="col-sm-6 control-label"></label>
@@ -45,16 +45,8 @@
         <div class="col-sm-6"></div>
         <input type="text" name="CupsDay" id="cups" class="form-control" placeholder="Avg cups per day" />
         <span id="CupsWarning"></span>
-
         </div>
-        <!--<div class="dropdown">
-             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Desired Strength<span class="caret"></span></button>
-             <ul class="dropdown-menu">
-                 <li><a href="#">Light</a></li>
-                 <li><a href="#">Medium</a></li>
-                 <li><a href="#">Bold</a></li>
-                 </ul>
-        </div>-->
+        
         <div class="form-group">
             <label for="Strength" class="col-sm-6 control-label"></label>
             <div class="col-sm-6"></div>
@@ -66,8 +58,8 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4" style="text-align:center">
 
-                <input type="submit" class="btn btn-primary" id="btn" onclick="return Validate();" value="Register" />
-                <input type="reset" class="btn btn-warning" value="Reset Form" />
+                <input type="submit" class="btn btn-primary" value="Register" />
+                <!-- <input type="reset" class="btn btn-warning" value="Reset Form" />-->
             </div>
             <div class="col-sm-4"></div>
         </div>
@@ -76,37 +68,41 @@
 
 <script>
 
-    function Validate() {
-        // alert("CheckCups running");
+    function ValidateEmail() {
+        alert("ValidateEmail running");
         if (/^\w+([\.-]?\w+)*@@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("email").value)) {
-            return CheckCups();
+            return true;
         }
         document.getElementById("EmailWarning").innerHTML =
             "<b>" + "You have entered an invalid email address </b>";
-        return (false);
-    }        
+        return false;
+    }     
+
       
     function CheckCups() {
-
+        alert("CheckCups running");
         var cups = document.getElementById("cups").value;
         if (cups > 5 || cups < 1) {
             document.getElementById("CupsWarning").innerHTML =
                 "<b>" + "Choose 1-5 </b>";
             return false;
         }
-        return true();
-
+        return true;
     }    
 
-    function CheckStrength() {
-        //alert("CheckStrength running");
+    function CheckStrength() { 
+        alert("CheckStrength running")
         var strength = document.getElementById("strength").value;
-        if (strength !== "light" || strength !== "medium" || strength !== "bold") {
-            document.getElementById("StrengthWarning").innerHTML =
-                "<b>" + "choose light, medium, or bold</b>";
-            return false;
+        if (strength === "light" || strength === "medium" || strength === "bold") {            
+            return true;
         }
-        return true;
+        document.getElementById("StrengthWarning").innerHTML =
+            "<b>" + "choose light, medium, or bold</b>";
+        return false;
+    }
+
+    function Alert() {
+        alert("This got called");
     }
 
     

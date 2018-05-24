@@ -18,7 +18,7 @@ namespace Lab_21.Controllers
             string firstName = "",
             string lastName = "",
             string email = "",
-            //int number = 0,
+            int number = 0,
             string password = "",
             int cupsDay = 0,
             string strength = "")
